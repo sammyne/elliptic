@@ -10,6 +10,8 @@
 
 - [miracl/core]
 - [Standard curve database]
+- [Short Weierstrass curves]
 
 [miracl/core]: https://github.com/miracl/core
+[Short Weierstrass curves]: http://hyperelliptic.org/EFD/g1p/auto-shortw.html
 [standard curve database]: https://neuromancer.sk/std/bn/bn254
