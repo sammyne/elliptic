@@ -1,6 +1,7 @@
 package bn254
 
 import (
+	"fmt"
 	"io"
 	"math/big"
 
@@ -8,7 +9,7 @@ import (
 )
 
 type G1 struct {
-	value BN254.ECP
+	value *BN254.ECP
 }
 
 func (c *G1) Add(a, b *G1) *G1 {
@@ -40,5 +41,12 @@ func (c *G1) Unmarshal(m []byte) ([]byte, error) {
 }
 
 func NewG1(r io.Reader) (*big.Int, *G1, error) {
-	panic("todo")
+	x, err := randBigInt(r)
+	if err != nil {
+		return nil, nil, fmt.Errorf("fail to generate rand x: %w", err)
+	}
+
+	X := &G1{value: BN254.G1mul(g1, x)}
+
+	return x, X, nil
 }

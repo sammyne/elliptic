@@ -8,10 +8,12 @@
 
 ## References
 
+- [go_cl]
 - [miracl/core]
 - [Standard curve database]
 - [Short Weierstrass curves]
 
+[go_cl]: https://asecuritysite.com/encryption/go_cl
 [miracl/core]: https://github.com/miracl/core
-[Short Weierstrass curves]: http://hyperelliptic.org/EFD/g1p/auto-shortw.html
+[short weierstrass curves]: http://hyperelliptic.org/EFD/g1p/auto-shortw.html
 [standard curve database]: https://neuromancer.sk/std/bn/bn254

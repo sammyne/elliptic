@@ -539,6 +539,7 @@ func frombytearray(b []byte, n int) *BIG {
 	return m
 }
 
+// little endian bytes
 func (r *BIG) ToBytes(b []byte) {
 	r.tobytearray(b, 0)
 }
