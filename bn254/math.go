@@ -11,17 +11,13 @@ import (
 // bigInt in little endian
 type bigInt = BN254.BIG
 
-func bigIntFromBE(v *big.Int) *bigInt {
-	panic("todo")
+func bigIntFromGo(v *big.Int) *bigInt {
+	return BN254.FromBytes(v.Mod(v, N).Bytes())
 }
 
-func bigIntToBE(v *bigInt) *big.Int {
+func bigIntToGo(v *bigInt) *big.Int {
 	var b [BN254.MODBYTES]byte
 	v.ToBytes(b[:])
-
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
 
 	return new(big.Int).SetBytes(b[:])
 }
