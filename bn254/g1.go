@@ -36,7 +36,7 @@ func (c *G1) Neg(a *G1) *G1 {
 }
 
 func (c *G1) ScalarBaseMult(k *big.Int) *G1 {
-	return &G1{value: BN254.G1mul(c.value, bigIntFromGo(k))}
+	return &G1{value: BN254.G1mul(g1, bigIntFromGo(k))}
 }
 
 func (c *G1) ScalarMult(a *G1, k *big.Int) *G1 {
